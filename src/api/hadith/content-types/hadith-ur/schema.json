@@ -1,0 +1,114 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hadith_urs",
+  "info": {
+    "singularName": "hadith-ur",
+    "pluralName": "hadith-urs",
+    "displayName": "hadith",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "number": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "text": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "categories": {
+      "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "enum": [
+        "Sahih (authentic)",
+        "Hasan (good)",
+        "Weak (Da'if)",
+        "Mawathiq (Dependable)"
+      ]
+    },
+    "summary": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "meta_tag": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "kinds": {
+      "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "enum": [
+        "Hadith-Qudsi",
+        "Hadith-Nabawi"
+      ]
+    },
+    "book": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::book.book",
+      "inversedBy": "hadiths"
+    },
+    "source": {
+      "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "enum": [
+        "Sahih Muslim",
+        "Sahih Bukhari"
+      ]
+    },
+    "international_no": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "narrator": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::narrator.narrator",
+      "inversedBy": "hadiths"
+    }
+  }
+}
