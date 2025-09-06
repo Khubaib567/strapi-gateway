@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hadith_urs",
+  "info": {
+    "singularName": "hadith-ur",
+    "pluralName": "hadith-urs",
+    "displayName": "hadith",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "number": {
+      "type": "integer"
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "categories": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Sahih (authentic)",
+        "Hasan (good)",
+        "Weak (Da'if)",
+        "Mawathiq (Dependable)"
+      ]
+    },
+    "summary": {
+      "type": "text",
+      "required": true
+    },
+    "meta_tag": {
+      "type": "string"
+    },
+    "kinds": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Hadith-Qudsi",
+        "Hadith-Nabawi"
+      ]
+    },
+    "narrator": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::narrator.narrator",
+      "inversedBy": "hadith_urs"
+    },
+    "book": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::book.book",
+      "inversedBy": "hadith_urs"
+    },
+    "source": {
+      "type": "enumeration",
+      "enum": [
+        "Sahih Muslim",
+        "Sahih Bukhari"
+      ]
+    },
+    "international_no": {
+      "type": "integer"
+    }
+  }
+}

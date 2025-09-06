@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hadith_collections",
+  "info": {
+    "singularName": "hadith-collection",
+    "pluralName": "hadith-collections",
+    "displayName": "hadith-collection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "book": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::book.book",
+      "mappedBy": "hadith_collection"
+    },
+    "total_books": {
+      "type": "integer",
+      "required": true
+    },
+    "author_name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

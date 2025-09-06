@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "narrators",
+  "info": {
+    "singularName": "narrator",
+    "pluralName": "narrators",
+    "displayName": "narrator"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "hadith_urs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::hadith-ur.hadith-ur",
+      "mappedBy": "narrator"
+    }
+  }
+}

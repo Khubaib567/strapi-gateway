@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "books",
+  "info": {
+    "singularName": "book",
+    "pluralName": "books",
+    "displayName": "book",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "topic": {
+      "type": "string",
+      "required": true
+    },
+    "hadith_collection": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::hadith-collection.hadith-collection",
+      "inversedBy": "book"
+    },
+    "number": {
+      "type": "integer",
+      "required": true
+    },
+    "total_hadiths": {
+      "type": "integer"
+    },
+    "hadith_urs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::hadith-ur.hadith-ur",
+      "mappedBy": "book"
+    }
+  }
+}
